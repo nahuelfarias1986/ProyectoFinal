@@ -1,0 +1,26 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+  
+    {% for p in medicos %}
+
+        <li>{{p}}</li>  
+        <button>
+            <a href="{% url 'EliminarMedico' p.nombre %}"> Eliminar</a>
+            <a href="{% url 'EditarMedico' p.nombre %}"> Editar</a>
+        </button>
+
+
+    {% endfor %}
+
+    <br>
+    <a href="medicos">Agregar Medico</a>
+
+    <button>
+        <a href="../AppCoder/medicos">Volver</a>
+    </button>
+
+
+{% endblock %}

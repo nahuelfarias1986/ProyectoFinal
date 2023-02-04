@@ -1,0 +1,15 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+   
+    <p>Especialidad del Consultorio: <i>{{ consultorio.especialidad }}</i></p>
+    <p>Sala: <i>{{ consultorio.sala }}</i></p>
+    <p>
+        <a href="{% url 'List' %}">Regresar</a>
+    </p>
+
+    
+{% endblock %}

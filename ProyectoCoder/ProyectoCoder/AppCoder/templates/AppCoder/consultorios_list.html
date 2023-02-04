@@ -1,0 +1,31 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <h1>Lista de Consultorios</h1>
+    <ul>
+        {% for consultorio in object_list %}
+
+            <li>
+                <p>ESPECIALIDAD: {{ consultorio.especialidad }} </p>
+                <p> 
+                    <a href="{% url 'Detail' consultorio.id %}">Ver</a> | 
+                    <a href="{% url 'Edit' consultorio.id %}">Editar</a> | 
+                    <a href="{% url 'Delete' consultorio.id %}">Eliminar</a> 
+                
+                </p> 
+            </li>
+
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'New'  %}">Agregar Consultorio</a> 
+
+    <button>
+        <a href="../consultorios">Volver</a>
+    </button>
+
+{% endblock %}

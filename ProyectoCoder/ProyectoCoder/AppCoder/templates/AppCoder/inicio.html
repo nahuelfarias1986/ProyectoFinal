@@ -1,0 +1,44 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>Bienvenidos al buscador del Centro Medico</h1>
+  
+
+    <h3>Busque según la especialidad, y le dirá en que sala se encuentra :</h3>
+
+ 
+    <form action="/AppCoder/buscar/" method="GET">
+
+        <input type="text" required name="especialidad" id="especialidad">
+
+        <input type="submit" value="Buscar">
+
+
+
+
+    </form>
+
+
+
+{% if sala %}
+
+    <p>Estamos buscando la especialidad: {{especialidad}}</p>
+
+    <ul>
+	{% for consultorio in sala %}
+		<li> {{consultorio.especialidad}} </li>
+		<li> {{consultorio.sala}} </li>
+	{% endfor %}
+
+    </ul>
+
+    {% endif %}
+
+    
+
+{% endblock %}
